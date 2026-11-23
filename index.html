@@ -8,16 +8,16 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 32px 24px;
-    width: min(100% - 40px, 640px);
+    width: min(100% - 40px, 960px);
     margin: clamp(40px, 12vh, 120px) auto;
     text-align: center;
     font: 600 18px system-ui, sans-serif;
     user-select: none;
   }
-  img { -webkit-user-drag: none; }
   a { color: #141414; text-decoration: none; -webkit-tap-highlight-color: transparent; }
-  a:hover { text-decoration: underline; }
-  img { display: block; width: 100%; margin-bottom: 8px; }
+  /* trim the empty sky and foreground, the same for every drawing so the ground lines still match */
+  img { display: block; width: 100%; aspect-ratio: 25 / 21; object-fit: cover; margin-bottom: 12px; -webkit-user-drag: none; }
+  @media (max-width: 560px) { main { margin-top: 12px; } }
   @media (hover: hover) {
     img { filter: grayscale(1); opacity: 0.75; transition: 0.3s; }
     a:hover img, a:focus img { filter: none; opacity: 1; }
@@ -26,6 +26,6 @@
 <main>
   <a href="https://aandreychuk.github.io/DEMO/"><img src="images/dmm_demo.svg" alt="">Decentralized Master-Mind</a>
   <a href="https://tviskaron.github.io/zero-wasm/vision-memory.html"><img src="images/zerohero_miner_green_tree.svg" alt="">ZeroHero in Crafter</a>
-  <!-- <a href="https://iameteron.github.io/zerohero-webshop/">ZeroHero in WebShop</a> -->
+  <a href="https://iameteron.github.io/zerohero-webshop/"><img src="images/zerohero_webshop_blue_gift.svg" alt="">ZeroHero in WebShop</a>
 </main>
 </html>
