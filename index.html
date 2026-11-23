@@ -19,7 +19,9 @@
   img { display: block; width: 100%; aspect-ratio: 25 / 21; object-fit: cover; margin-bottom: 12px; -webkit-user-drag: none; }
   @media (max-width: 560px) { main { margin-top: 12px; } }
   @media (hover: hover) {
+    a { color: #6b6b67; transition: color 0.3s; }
     img { filter: grayscale(1); opacity: 0.75; transition: 0.3s; }
+    a:hover, a:focus { color: #141414; }
     a:hover img, a:focus img { filter: none; opacity: 1; }
   }
 </style>
